@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="QEMU,KVM," />
 
 
 
@@ -94,13 +94,14 @@
 
 
 <meta name="description" content="1. QEMU与KVM关系Linux入门学习教程：虚拟机体验之QEMU篇Linux入门学习教程：虚拟机体验之KVM篇 QEMU可以模拟一个虚拟机的所有设备，包含CPU，内存，硬盘，网卡等，但是由于是单纯用户态的模拟，CPU和内存也要经过宿主操作系统翻译后才能和硬件说上话，所以性能就非常差了。为了解决这个问题，QEMU一般不单独使用，都是和KVM在一起使用，KVM会插入到宿主机的内核里，解决CPU和">
+<meta name="keywords" content="QEMU,KVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="QEMU and KVM">
 <meta property="og:url" content="http://yoursite.com/2017/07/14/QEMU-and-KVM/index.html">
 <meta property="og:site_name" content="Installation and Automation">
 <meta property="og:description" content="1. QEMU与KVM关系Linux入门学习教程：虚拟机体验之QEMU篇Linux入门学习教程：虚拟机体验之KVM篇 QEMU可以模拟一个虚拟机的所有设备，包含CPU，内存，硬盘，网卡等，但是由于是单纯用户态的模拟，CPU和内存也要经过宿主操作系统翻译后才能和硬件说上话，所以性能就非常差了。为了解决这个问题，QEMU一般不单独使用，都是和KVM在一起使用，KVM会插入到宿主机的内核里，解决CPU和">
 <meta property="og:image" content="http://ogd81e9re.bkt.clouddn.com/libvirt-manage-hypervisors.jpg">
-<meta property="og:updated_time" content="2017-07-14T10:44:57.184Z">
+<meta property="og:updated_time" content="2017-07-14T10:54:42.952Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="QEMU and KVM">
 <meta name="twitter:description" content="1. QEMU与KVM关系Linux入门学习教程：虚拟机体验之QEMU篇Linux入门学习教程：虚拟机体验之KVM篇 QEMU可以模拟一个虚拟机的所有设备，包含CPU，内存，硬盘，网卡等，但是由于是单纯用户态的模拟，CPU和内存也要经过宿主操作系统翻译后才能和硬件说上话，所以性能就非常差了。为了解决这个问题，QEMU一般不单独使用，都是和KVM在一起使用，KVM会插入到宿主机的内核里，解决CPU和">
@@ -209,6 +210,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -297,6 +308,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/virtualization/" itemprop="url" rel="index">
+                    <span itemprop="name">virtualization</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -383,6 +416,14 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/QEMU/" rel="tag"># QEMU</a>
+          
+            <a href="/tags/KVM/" rel="tag"># KVM</a>
+          
+        </div>
       
 
       
@@ -481,7 +522,25 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
           
 
         </nav>

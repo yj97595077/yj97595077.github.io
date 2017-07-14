@@ -93,12 +93,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Installation and Automation">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="QEMU与KVM关系Linux入门学习教程：虚拟机体验之QEMU篇Linux入门学习教程：虚拟机体验之KVM篇 QEMU可以模拟一个虚拟机的所有设备，包含CPU，内存，硬盘，网卡等，但是由于是单纯用户态的模拟，CPU和内存也要经过宿主操作系统翻译后才能和硬件说上话，所以性能就非常差了。为了解决这个问题，QEMU一般不单独使用，都是和KVM在一起使用，KVM会插入到宿主机的内核里，解决CPU和内存性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QEMU and KVM">
+<meta property="og:url" content="http://yoursite.com/2017/07/14/QEMU-and-KVM/index.html">
 <meta property="og:site_name" content="Installation and Automation">
+<meta property="og:description" content="QEMU与KVM关系Linux入门学习教程：虚拟机体验之QEMU篇Linux入门学习教程：虚拟机体验之KVM篇 QEMU可以模拟一个虚拟机的所有设备，包含CPU，内存，硬盘，网卡等，但是由于是单纯用户态的模拟，CPU和内存也要经过宿主操作系统翻译后才能和硬件说上话，所以性能就非常差了。为了解决这个问题，QEMU一般不单独使用，都是和KVM在一起使用，KVM会插入到宿主机的内核里，解决CPU和内存性">
+<meta property="og:image" content="http://ogd81e9re.bkt.clouddn.com/libvirt-manage-hypervisors.jpg">
+<meta property="og:updated_time" content="2017-07-14T10:41:48.063Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Installation and Automation">
+<meta name="twitter:title" content="QEMU and KVM">
+<meta name="twitter:description" content="QEMU与KVM关系Linux入门学习教程：虚拟机体验之QEMU篇Linux入门学习教程：虚拟机体验之KVM篇 QEMU可以模拟一个虚拟机的所有设备，包含CPU，内存，硬盘，网卡等，但是由于是单纯用户态的模拟，CPU和内存也要经过宿主操作系统翻译后才能和硬件说上话，所以性能就非常差了。为了解决这个问题，QEMU一般不单独使用，都是和KVM在一起使用，KVM会插入到宿主机的内核里，解决CPU和内存性">
+<meta name="twitter:image" content="http://ogd81e9re.bkt.clouddn.com/libvirt-manage-hypervisors.jpg">
 
 
 
@@ -126,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/14/QEMU-and-KVM/"/>
 
 
 
 
 
-  <title>Installation and Automation</title>
+  <title>QEMU and KVM | Installation and Automation</title>
   
 
 
@@ -157,9 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -242,9 +246,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -270,9 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/14/QEMU-and-KVM/" itemprop="url">QEMU and KVM</a></h1>
+          <h1 class="post-title" itemprop="name headline">QEMU and KVM</h1>
         
 
         <div class="post-meta">
@@ -319,9 +321,7 @@
       
 
       
-        
-          
-            <h5 id="QEMU与KVM关系"><a href="#QEMU与KVM关系" class="headerlink" title="QEMU与KVM关系"></a>QEMU与KVM关系</h5><p><a href="http://www.linuxidc.com/Linux/2015-03/114461.htm" target="_blank" rel="external">Linux入门学习教程：虚拟机体验之QEMU篇</a><br><a href="http://www.linuxidc.com/Linux/2015-03/114462.htm" target="_blank" rel="external">Linux入门学习教程：虚拟机体验之KVM篇</a></p>
+        <h5 id="QEMU与KVM关系"><a href="#QEMU与KVM关系" class="headerlink" title="QEMU与KVM关系"></a>QEMU与KVM关系</h5><p><a href="http://www.linuxidc.com/Linux/2015-03/114461.htm" target="_blank" rel="external">Linux入门学习教程：虚拟机体验之QEMU篇</a><br><a href="http://www.linuxidc.com/Linux/2015-03/114462.htm" target="_blank" rel="external">Linux入门学习教程：虚拟机体验之KVM篇</a></p>
 <p>QEMU可以模拟一个虚拟机的所有设备，包含CPU，内存，硬盘，网卡等，但是由于是单纯用户态的模拟，CPU和内存也要经过宿主操作系统翻译后才能和硬件说上话，所以性能就非常差了。为了解决这个问题，QEMU一般不单独使用，都是和KVM在一起使用，KVM会插入到宿主机的内核里，解决CPU和内存性能差的问题。引入kvm之后，其实还是QEMU作为主程序在操作整个虚拟化的流程，kvm只在其中干增强性能的部分，所以，所有的命令基本和单纯只有QEMU的时候一样，最多就是再加上–enable=kvm罢了。kvm没有单独可以调用的命令，你man它就可以看出来，kvm命令就是QEMU带上–enable=kvm的包装。</p>
 <h5 id="QEMU命令"><a href="#QEMU命令" class="headerlink" title="QEMU命令"></a>QEMU命令</h5><p>QEMU的命令就如下几种，可以man一下看具体用法<br>qemu-img：QEMU磁盘的<br>qemu-nbd：QEMU磁盘挂载到宿主机的<br>qemu-system-x86_64：QEMU主程序<br>qemu-system-x86_64 –enable=kvm：这个命令就是kvm命令</p>
 <h5 id="Libvirt"><a href="#Libvirt" class="headerlink" title="Libvirt"></a>Libvirt</h5><p><a href="http://blog.csdn.net/gaoxingnengjisuan/article/details/9674315" target="_blank" rel="external">Libvirt学习总结</a><br><a href="http://www.ibm.com/developerworks/cn/linux/l-libvirt/" target="_blank" rel="external">Libvirt 虚拟化库剖析</a></p>
@@ -358,20 +358,27 @@
 </ul>
 <h5 id="XML文件"><a href="#XML文件" class="headerlink" title="XML文件"></a>XML文件</h5><p><a href="https://libvirt.org/formatdomain.html" target="_blank" rel="external">Domain XML format</a><br><a href="http://blog.csdn.net/liukuan73/article/details/46049579" target="_blank" rel="external">KVM虚拟机的xml配置文件</a><br><a href="http://www.cnblogs.com/yanghuahui/archive/2013/05/08/3067676.html" target="_blank" rel="external">libvirt 启动虚拟机xml配置文件</a></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
@@ -379,141 +386,38 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/14/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yang Jian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Installation and Automation">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/14/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-14T17:11:08+08:00">
-                2017-07-14
-              </time>
+              <a href="/2017/07/14/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -521,6 +425,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -541,8 +449,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -586,6 +503,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#QEMU与KVM关系"><span class="nav-number">1.</span> <span class="nav-text">QEMU与KVM关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#QEMU命令"><span class="nav-number">2.</span> <span class="nav-text">QEMU命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Libvirt"><span class="nav-number">3.</span> <span class="nav-text">Libvirt</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#virsh"><span class="nav-number">4.</span> <span class="nav-text">virsh</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#XML文件"><span class="nav-number">5.</span> <span class="nav-text">XML文件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -699,10 +632,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
